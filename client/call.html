@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE =edge">
+    <meta name="viewport" content="width =device-width,initial -scale=1">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>Video Call</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/call.css" />
+</head>
+<body id="CallFrame">
+    <div class="header">
+        <div class="dropdown">
+            <ul class="dropbtn icons btn-right showLeft">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div id="toolsMenu" class="dropdown-content">
+                <a id="screenShare">Share Screen</a>
+                <a id="stop-screenShare" style="display:none">Stop Sharing</a>
+            </div>
+        </div>
+    </div>
+    <div id="scratchPad">
+        <div id='LocalVideoMuteContainer'>
+            <video id="localsrc" autoplay="autoplay"></video>
+            <span name='mutedVoice' style='display:none'></span>
+            <img src='image/MutedVideo.png' style='display:none' />
+        </div>
+        <div id='RemoteVideoMuteContainer'>
+            <video id="remotesrc" autoplay="autoplay"></video>
+            <span name='mutedVoice' style='display:none'></span>
+            <img src='image/RemoteVideoMuted.png' style='display:none' />
+        </div>
+        <div id="callControlBtns">
+            <button id="muteVoice"></button>
+            <button id="hangup"></button>
+            <button id="muteVideo"></button>
+        </div>
+    </div>
+    <script src="js/rtc.js"></script>
+</body>
+</html>

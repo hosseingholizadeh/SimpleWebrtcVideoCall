@@ -1,0 +1,267 @@
+﻿@charset "utf-8";
+
+@font-face {
+    font-family: yekan;
+    src: url('../fonts/Yekan.eot?#') format('eot'), /* IE6–8 */
+    url('../fonts/Yekan.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/Yekan.ttf') format('truetype'); /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+#CallFrame {
+    direction: rtl;
+    position: absolute;
+    top: 0;
+    overflow: hidden !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+    #CallFrame html {
+        overflow-x: hidden;
+    }
+
+    #CallFrame #RemoteVideoMuteContainer,
+    #CallFrame #LocalVideoMuteContainer {
+        position: absolute;
+    }
+
+        #CallFrame #RemoteVideoMuteContainer video,
+        #CallFrame #LocalVideoMuteContainer video {
+            width: 100%;
+            height: 100%;
+            transform: scaleX(-1);
+        }
+
+
+        #CallFrame #LocalVideoMuteContainer img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #CallFrame #LocalVideoMuteContainer span[name="mutedVoice"] {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            color: #ffffff;
+            margin: 0 10px;
+            border: none !important;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            z-index: 99999;
+            background: #eeeeee5e;
+            left: 0;
+        }
+
+        #CallFrame #RemoteVideoMuteContainer img {
+            position: absolute;
+            border-radius: 50%;
+            width: 370px;
+            height: 250px;
+            left: 35%;
+            top: 30%;
+            box-sizing: border-box;
+        }
+
+        #CallFrame #RemoteVideoMuteContainer span[name="mutedVoice"] {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            color: #ffffff;
+            margin: 0 10px;
+            border: none !important;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            z-index: 99999;
+            background: #eeeeee5e;
+            left: 2px;
+        }
+
+            #CallFrame #RemoteVideoMuteContainer span[name="mutedVoice"]:before,
+            #CallFrame #LocalVideoMuteContainer span[name="mutedVoice"]:before {
+                content: "\f131";
+            }
+
+    #CallFrame #localsrc,
+    #CallFrame #LocalVideoMuteContainer {
+        background-color: #ccc;
+        width: 213px;
+        height: 160px;
+        bottom: 10px;
+        right: 10px;
+        z-index: 9999;
+        box-shadow: 0 0 2px 0 rgba(255, 252, 252, 0.45);
+    }
+
+    #CallFrame #remotesrc, 
+    #CallFrame #RemoteVideoMuteContainer {
+        height: 100%;
+        position: fixed;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        background-color: #000000;
+    }
+
+    #CallFrame #callControlBtns {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        right: 47%;
+        width: 240px;
+        background-color: transparent;
+        text-align: center;
+    }
+
+        #CallFrame #callControlBtns button#muteVoice,
+        #CallFrame #callControlBtns button#muteVideo {
+            background-color: transparent;
+        }
+
+        #CallFrame #callControlBtns button#hangup {
+            background-color: #ba0a0a;
+        }
+
+        #CallFrame #callControlBtns button#muteVoice,
+        #CallFrame #callControlBtns button#muteVideo,
+        #CallFrame #callControlBtns button#hangup {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            color: #ffffff;
+            margin: 0 10px;
+            border: none !important;
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+            #CallFrame #callControlBtns button#muteVoice:hover,
+            #CallFrame #callControlBtns button#muteVideo:hover,
+            #CallFrame #callControlBtns button#hangup:hover {
+                opacity: 0.7;
+                box-shadow: 1px 1px 10px 1px rgba(255, 252, 252, 0.45);
+            }
+
+            #CallFrame #callControlBtns button#muteVoice:before {
+                content: "\f130";
+            }
+
+            #CallFrame #callControlBtns button#muteVideo:before {
+                content: "\f03d";
+            }
+
+            #CallFrame #callControlBtns button#hangup:before {
+                content: "\f00d";
+            }
+
+.header {
+    width: 100%;
+    background-color: #0d77b6 !important;
+    height: 60px;
+}
+
+.showLeft {
+    background-color: transparent !important;
+    text-shadow: none !important;
+    color: #fff !important;
+    padding: 10px;
+}
+
+.icons li {
+    background: none repeat scroll 0 0 #fff;
+    height: 5px;
+    width: 5px;
+    line-height: 0;
+    list-style: none outside none;
+    margin-right: 15px;
+    margin-top: 3px;
+    vertical-align: top;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.btn-left {
+    left: 0.4em;
+}
+
+.btn-right {
+    right: 0.4em;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 0.24em;
+}
+
+.dropbtn {
+    background-color: transparent;
+    position: fixed;
+    color: white;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: transparent;
+    }
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 0.4em;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(178, 178, 178, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 6px 13px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown a:hover {
+    background-color: #f1f1f1
+}
+
+.show {
+    display: block;
+}
